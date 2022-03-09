@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 /*const OverViewPageRoute = 'Overview';
 const DriversPageRoute = 'Drivers';
 const ClientPageRoute = 'Clients';
@@ -9,8 +11,6 @@ List sideMenuItems = [
   ClientPageRoute,
   AuthenticationPageRoute
 ];*/
-
-import 'package:flutter/material.dart';
 
 const rootRoute = "/";
 
