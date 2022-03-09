@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:web_dashboard/constants/controllers.dart';
 import 'package:web_dashboard/constants/style.dart';
 import 'package:web_dashboard/helpers/responsiveness.dart';
+import 'package:web_dashboard/pages/overview/widgets/overview_cards_medium.dart';
+import 'package:web_dashboard/pages/overview/widgets/overview_cards_small.dart';
 
 import '../../widgets/custom_text.dart';
 import 'widgets/overview_cards_large.dart';
@@ -32,7 +34,16 @@ class OverViewPage extends StatelessWidget {
         ),
         Expanded(
           child: ListView(
-            children: const [OverviewCardsLarge()],
+            children: [
+              if (ResponsiveWidget.isLargeScreen(context) ||
+                  ResponsiveWidget.isMediumScreen(context))
+                if (ResponsiveWidget.isCustomScreen(context))
+                  const OverviewCardsMediumScreen()
+                else
+                  const OverviewCardsLargeScreen()
+              else
+                const OverviewCardsSmallScreen()
+            ],
           ),
         ),
       ],
