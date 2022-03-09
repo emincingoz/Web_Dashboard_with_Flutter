@@ -39,10 +39,10 @@ class SideMenu extends StatelessWidget {
                     color: active,
                   )),
                 ]),
-                const SizedBox(height: 40)
+                //const SizedBox(height: 40)
               ],
             ),
-          //const SizedBox(height: 40),
+          const SizedBox(height: 40),
           Divider(color: lightGrey.withOpacity(.1)),
           Column(
             mainAxisSize: MainAxisSize.min,

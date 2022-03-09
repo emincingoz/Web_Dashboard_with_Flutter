@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:web_dashboard/constants/style.dart';
 import 'package:web_dashboard/controllers/menu_controller.dart';
 import 'package:web_dashboard/controllers/navigation_controller.dart';
 
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Dashboard',
         theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
+          // light from style.dart
+          scaffoldBackgroundColor: light,
           textTheme: GoogleFonts.mulishTextTheme(
             Theme.of(context).textTheme,
           ).apply(

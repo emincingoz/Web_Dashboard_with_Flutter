@@ -1,17 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:web_dashboard/constants/controllers.dart';
 import 'package:web_dashboard/constants/style.dart';
+import 'package:web_dashboard/helpers/responsiveness.dart';
 
 import '../../widgets/custom_text.dart';
+import 'widgets/overview_cards_large.dart';
 
 class OverViewPage extends StatelessWidget {
   const OverViewPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: CustomText(
-      text: 'OverView',
-      color: dark,
-    ));
+    return Column(
+      children: [
+        Obx(
+          () => Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                    top: ResponsiveWidget.isSmallScreen(context) ? 56 : 6),
+                child: CustomText(
+                  text: menuController.activeItem.value,
+                  color: dark,
+                  size: 24,
+                  weight: FontWeight.bold,
+                ),
+              )
+            ],
+          ),
+        ),
+        Expanded(
+          child: ListView(
+            children: const [OverviewCardsLarge()],
+          ),
+        ),
+      ],
+    );
   }
 }
