@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_dashboard/helpers/local_navigator.dart';
 import 'package:web_dashboard/widgets/side_menu.dart';
 
 class LargeScreen extends StatelessWidget {
@@ -15,9 +16,7 @@ class LargeScreen extends StatelessWidget {
         Expanded(
           // flex is for dynamically changeable layouts
           flex: 9,
-          child: Container(
-            color: Colors.blue,
-          ),
+          child: localNavigator(),
         ),
       ],
     );
