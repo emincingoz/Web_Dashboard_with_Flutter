@@ -37,7 +37,7 @@ class HorizontalMenuItem extends StatelessWidget {
                       menuController.isActive(itemName),
                   child: Container(
                     width: 6,
-                    height: 40,
+                    height: 60,
                     color: dark,
                   ),
                   maintainAnimation: true,

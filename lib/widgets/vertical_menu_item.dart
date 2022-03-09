@@ -35,7 +35,7 @@ class VerticalMenuItem extends StatelessWidget {
                       menuController.isActive(itemName),
                   child: Container(
                     width: 3,
-                    height: 65,
+                    height: 60,
                     color: dark,
                   ),
                   maintainAnimation: true,
