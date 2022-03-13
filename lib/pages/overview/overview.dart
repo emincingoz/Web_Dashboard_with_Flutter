@@ -9,6 +9,7 @@ import 'package:web_dashboard/pages/overview/widgets/revenue_section_large.dart'
 import 'package:web_dashboard/pages/overview/widgets/revenue_section_small.dart';
 
 import '../../widgets/custom_text.dart';
+import 'widgets/available_drivers.dart';
 import 'widgets/overview_cards_large.dart';
 
 class OverViewPage extends StatelessWidget {
@@ -49,7 +50,9 @@ class OverViewPage extends StatelessWidget {
               if (ResponsiveWidget.isSmallScreen(context))
                 const RevenueSectionSmall()
               else
-                const RevenueSectionLarge()
+                const RevenueSectionLarge(),
+
+              const AvailableDrivers()
             ],
           ),
         ),
