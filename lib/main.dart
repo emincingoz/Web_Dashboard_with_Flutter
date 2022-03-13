@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:web_dashboard/constants/style.dart';
 import 'package:web_dashboard/controllers/menu_controller.dart';
 import 'package:web_dashboard/controllers/navigation_controller.dart';
+import 'package:web_dashboard/routing/routes.dart';
+import 'package:web_dashboard/widgets/layout.dart';
 
 import 'pages/authentication/authentication.dart';
 
@@ -19,6 +21,18 @@ class MyApp extends StatelessWidget {
     //
     // for getx
     return GetMaterialApp(
+      initialRoute: authenticationPageRoute,
+      //unknownRoute: GetPage(name: 'not-found', page: () => PageNotFound(), trainsition: Transition.fadeIn),
+      getPages: [
+        GetPage(name: rootRoute, page: () => SiteLayout()),
+        GetPage(
+            name: authenticationPageRoute,
+            page: () => const AuthenticationPage()),
+        //GetPage(name: overviewPageRoute, page: () => const OverViewPage()),
+        //GetPage(name: driversPageRoute, page: () => const DriversPage()),
+        //GetPage(name: clientsPageRoute, page: () => const ClientsPage()),
+      ],
+
       debugShowCheckedModeBanner: false,
       title: 'Dashboard',
       theme: ThemeData(
@@ -37,7 +51,9 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue,
       ),
       //home: SiteLayout());
-      home: const AuthenticationPage(),
+      //
+      // InitialRout atandığı için kaldırıldı
+      //home: const AuthenticationPage(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:web_dashboard/routing/routes.dart';
 
 import '../../constants/controllers.dart';
 import '../../constants/style.dart';
@@ -86,17 +87,20 @@ class AuthenticationPage extends StatelessWidget {
               const SizedBox(height: 15),
               InkWell(
                 onTap: () {
-                  Get.offAll(() => SiteLayout());
+                  Get.offAllNamed(rootRoute);
+                  //Get.offAll(() => SiteLayout());
                 },
                 child: Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                  decoration: BoxDecoration(
+                    color: active,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   alignment: Alignment.center,
                   width: double.maxFinite,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   child: const CustomText(
                     text: 'Login',
-                    color: Colors.blueGrey,
+                    color: Colors.white,
                   ),
                 ),
               ),
