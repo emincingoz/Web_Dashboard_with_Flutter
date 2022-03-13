@@ -5,6 +5,8 @@ import 'package:web_dashboard/constants/style.dart';
 import 'package:web_dashboard/helpers/responsiveness.dart';
 import 'package:web_dashboard/pages/overview/widgets/overview_cards_medium.dart';
 import 'package:web_dashboard/pages/overview/widgets/overview_cards_small.dart';
+import 'package:web_dashboard/pages/overview/widgets/revenue_section_large.dart';
+import 'package:web_dashboard/pages/overview/widgets/revenue_section_small.dart';
 
 import '../../widgets/custom_text.dart';
 import 'widgets/overview_cards_large.dart';
@@ -42,7 +44,12 @@ class OverViewPage extends StatelessWidget {
                 else
                   const OverviewCardsLargeScreen()
               else
-                const OverviewCardsSmallScreen()
+                const OverviewCardsSmallScreen(),
+              //
+              if (ResponsiveWidget.isSmallScreen(context))
+                const RevenueSectionSmall()
+              else
+                const RevenueSectionLarge()
             ],
           ),
         ),
