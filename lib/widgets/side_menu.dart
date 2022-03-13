@@ -49,13 +49,8 @@ class SideMenu extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: sideMenuItemRoutes
                 .map((item) => SideMenuItem(
-                    itemName: item.name == authenticationPageDisplayName
-                        ? 'Log out'
-                        : item.name,
+                    itemName: item.name,
                     onTap: () {
-                      if (item.name == authenticationPageDisplayName) {
-                        Get.offAll(() => const AuthenticationPage());
-                      }
                       if (item.route == authenticationPageRoute) {
                         Get.offAllNamed(authenticationPageRoute);
                         menuController
